@@ -1,0 +1,332 @@
+@charset "UTF-8";
+* {
+  position: relative;
+  box-sizing: border-box;
+  font-family: "Alegreya", AR JULIAN, serif;
+  color: gray;
+}
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.container {
+  height: 1100px;
+  width: 800px;
+  margin: auto;
+  font-size: 0;
+}
+
+.left, .right {
+  display: inline-block;
+  font-size: 20px;
+}
+
+.left {
+  height: auto;
+  width: 30%;
+  background-color: rgba(255, 192, 203, 0.1);
+  padding: 20px 30px;
+}
+
+.right {
+  height: 100%;
+  width: 70%;
+  background-color: rgba(255, 255, 0, 0.01);
+  vertical-align: top;
+  padding: 20px 45px;
+}
+
+h1 {
+  margin: 0;
+}
+
+hr {
+  margin: 5px 0px 20px 0px;
+}
+
+.subject {
+  margin: 30px auto 0px auto;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+.subject .word {
+  float: left;
+}
+.subject .block {
+  background-color: rgba(255, 192, 203, 0.8);
+  overflow: hidden;
+  height: 17px;
+  width: auto;
+  left: 5px;
+  margin: 0px 5px 10px 0px;
+}
+
+.left .subject {
+  margin: 45px auto 0px auto;
+}
+
+.right .subject {
+  margin: 30px auto 18px auto;
+}
+.right hr {
+  margin: 20px 0px 20px 0px;
+}
+
+span, .text {
+  font-family: "Alegreya", cursive, Lucida Fax, serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  vertical-align: middle;
+}
+
+.head {
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+  background-image: url("https://goo.gl/cX4KHP");
+  background-size: auto 100%;
+  background-position: 60%;
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.5);
+  margin: 45px auto 30px auto;
+}
+
+.head:before {
+  content: "";
+  position: absolute;
+  height: 162px;
+  width: 162px;
+  transform: translateX(-5%) translateY(-5%);
+  border-radius: 100%;
+  border: 3px solid pink;
+}
+
+.contact, .connect {
+  line-height: 30px;
+}
+
+.fa {
+  height: auto;
+  width: 30px;
+  font-size: 20px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.fa-envelope {
+  font-size: 15px;
+}
+
+.text.title {
+  font-weight: 700;
+  height: auto;
+  width: 90px;
+  display: inline-block;
+  line-height: 25px;
+}
+
+.personal hr {
+  margin: 0px;
+}
+
+ul {
+  padding: 0px 20px;
+  line-height: 25px;
+}
+
+.interest .text {
+  font-weight: 700;
+}
+
+.name {
+  line-height: 37px;
+  margin: 30px auto 0px auto;
+}
+.name hr {
+  margin: 0px 0px 0px 0px;
+}
+
+.profile {
+  line-height: 20px;
+}
+
+.character {
+  margin: 30px 0px 0px 0px;
+  font-size: 0px;
+}
+
+.c {
+  display: inline-block;
+  width: 140px;
+}
+
+.line {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 10px;
+  background-color: rgba(255, 192, 203, 0.8);
+  height: 12px;
+  width: 280px;
+}
+
+.line_percent {
+  position: absolute;
+  left: 0px;
+  border-radius: 10px 0px 0px 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.line_percent.p60 {
+  height: 12px;
+  width: 60%;
+}
+
+.line_percent.p70 {
+  height: 12px;
+  width: 70%;
+}
+
+.line_percent.p80 {
+  height: 12px;
+  width: 80%;
+}
+
+.line_percent.p90 {
+  height: 12px;
+  width: 90%;
+}
+
+.line_percent.p100 {
+  height: 12px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.percent {
+  margin: auto 0px 0px 30px;
+  position: absolute;
+  right: 0px;
+}
+
+.year, .occupation, .triangle {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.year, .triangle {
+  margin-top: 4px;
+}
+
+.year {
+  background-color: gray;
+  color: white;
+  padding: 0px 0px 3px 10px;
+  line-height: 20px;
+  border-radius: 0px 3px 3px 0px;
+}
+
+.triangle {
+  font-style: 0px;
+  border-color: transparent transparent transparent gray;
+  border-style: solid solid solid solid;
+  border-width: 11px 0px 12px 15px;
+  height: 0px;
+  width: 0px;
+  left: -5px;
+  z-index: -1;
+  border-radius: 2px;
+}
+
+.occupation {
+  padding: 0px 40px;
+  margin-right: 40px;
+}
+
+.occupation:before {
+  content: "●";
+  position: absolute;
+  left: 10px;
+}
+
+.oc_position, .company {
+  font-size: 15px;
+}
+
+.timeline {
+  display: inline-block;
+  position: absoute;
+  border: 2px solid rgba(255, 192, 203, 0.5);
+  border-width: 0px 2px 0px 0px;
+  z-index: -1;
+  height: 180px;
+  width: 0px;
+  top: -120px;
+  left: -74.7%;
+}
+
+.work_experience {
+  height: 200px;
+}
+
+.education, .personal_skill {
+  font-size: 0px;
+}
+
+.little_left, .little_right {
+  display: inline-block;
+  font-size: 20px;
+}
+
+.little_left {
+  height: auto;
+  width: 50%;
+  background-color: rgba(255, 192, 203, 0.1);
+  padding-right: 20px;
+}
+
+.little_right {
+  height: 100%;
+  width: 50%;
+  background-color: rgba(255, 255, 0, 0.01);
+  vertical-align: top;
+  padding-left: 15px;
+}
+
+.education {
+  line-height: 20px;
+}
+.education hr {
+  margin: 5px 0px 0px 0px;
+}
+.education span {
+  line-height: 5px;
+}
+
+.specialize, .school {
+  font-size: 15px;
+}
+
+.personal_skill {
+  line-height: 20px;
+}
+.personal_skill .little_left, .personal_skill .little_right {
+  padding: 0px;
+}
+.personal_skill .little_right {
+  padding-left: 15px;
+}
+
+.c.skill {
+  width: 85px;
+}
+
+.line.skill {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 10px;
+  background-color: rgba(255, 192, 203, 0.8);
+  height: 12px;
+  width: 125px;
+}
