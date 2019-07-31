@@ -1,0 +1,282 @@
+*
+  // border: solid 1px pink
+  position: relative //讓位置可自由設定
+  box-sizing: border-box //讓外框大小算在區塊內
+  font-family: 'Alegreya', AR JULIAN, serif
+  color: gray //黑色0.6%透明
+
+
+@mixin size($h,$w)
+  height: $h
+  width: $w
+
+html,body 
+  margin: 0px //此兩條去掉預設的空白
+  padding: 0px
+  
+.container
+  +size(1100px,800px) //內容上下auto左右寬800
+  margin: auto //內容在畫面左右置中
+  font-size: 0 //讓div間的空白消失!!!!!
+  
+.left,.right
+  display: inline-block //才可並排
+  font-size: 20px
+  
+.left
+  +size(auto,30%)
+  background-color: rgba(pink,0.1)
+  padding: 20px 30px //上下20 左右30
+.right
+  +size(100%,70%)
+  background-color: rgba(yellow,0.01)
+  vertical-align: top
+  padding: 20px 45px //上下20 左右45
+  
+h1
+  margin: 0
+  
+hr
+  margin: 5px 0px 20px 0px //上5px 下20px
+
+
+.subject
+  margin: 30px auto 0px auto
+  font-weight: 700 //400等同於normal，700等同於bold
+  letter-spacing: 3px //字間距
+  .word
+    float: left //填滿右邊(1)
+  .block
+    background-color: rgba(pink,0.8)
+    overflow: hidden //填滿右邊(2)
+    +size(17px,auto)
+    left: 5px
+    margin: 0px 5px 10px 0px //右5 下10，撐高hr才不會跑上來
+    
+.left
+  .subject
+    margin: 45px auto 0px auto //上45px 下0px 左右auto
+.right
+  .subject
+    margin: 30px auto 18px auto //上30px 下18px  左右auto
+  hr
+    margin: 20px 0px 20px 0px
+
+span,.text
+  font-family: 'Alegreya', cursive, Lucida Fax, serif //小字字體
+  font-size: 12px
+  font-weight: 400 //因會繼承粗體，這邊補設回來
+  letter-spacing: 0px //因會繼承字間距，這邊補設回來
+  vertical-align: middle  //上下置中
+
+
+
+//------------Left part--------
+.head
+  height: 150px
+  width: 150px
+  border-radius: 100%
+  background-image: url("https://goo.gl/cX4KHP") //https://goo.gl/yjMX7B
+  background-size: auto 100% //圖片左右auto，上下滿版100%  
+  background-position: 60%
+  // outline: 5px solid pink //outline是border外面一層，可惜無法圓角
+  // border: solid 5px pink //和shadow的不同是會往內縮
+  box-shadow: 0 0 0 5px rgba(white,0.5) //內層白色
+  margin: 45px auto 30px auto
+
+.head:before
+  content: ""
+  position: absolute
+  +size(162px,162px)
+  transform: translateX(-5%) translateY(-5%) 
+  border-radius: 100%
+  border: 3px solid pink  //外層粉色，比shadow又更外層(自定位)
+
+.contact,.connect
+  line-height: 30px //行距(for contact & connect)
+
+.fa
+  +size(auto, 30px) //icon右邊空格
+  font-size: 20px //icon大小
+  vertical-align: middle //上下置中
+  text-align: center  //左右置中
+.fa-envelope
+  font-size: 15px 
+
+.text.title
+  font-weight: 700
+  +size(auto,90px) //讓冒號對齊
+  display: inline-block //很重要再重申一次，不然會自動換行!!!
+  line-height: 25px //行距(for personal only)
+.personal
+  hr
+    margin: 0px
+  
+ul
+  padding: 0px 20px //去掉預設padding, 上下0
+  line-height: 25px //行距(for interest only)
+
+.interest
+  .text
+    font-weight: 700
+//------------Right part--------
+
+
+
+  
+.name
+  line-height: 37px //行距(for name only)
+  margin: 30px auto 0px auto
+  hr
+    margin: 0px 0px 0px 0px //(for name only)
+  
+.profile
+  line-height: 20px //行距(for profile only
+.character
+  margin: 30px 0px 0px 0px //上30 (for character only)
+  font-size: 0px
+.c
+  display: inline-block
+  width: 140px
+.line
+  display: inline-block
+  vertical-align: middle
+  border-radius: 10px
+  background-color: rgba(pink,0.8)
+  +size(12px,280px)
+
+// .line:before
+//   content: ""
+//   position: absolute
+//   +size(12px,70%)
+//   // transform: translateX(-5%) translateY(-5%) 
+//   border-radius: 10px
+//   background-color: rgba(black,0.5)
+.line_percent
+  position: absolute //靠左(1)
+  left: 0px //靠左(2)
+  border-radius: 10px 0px 0px 10px
+  background-color: rgba(black,0.5)
+  // +size(12px,70%)
+.line_percent.p60
+  +size(12px,60%) 
+.line_percent.p70
+  +size(12px,70%) //不能只打width:70，高會變成0
+.line_percent.p80
+  +size(12px,80%)
+.line_percent.p90
+  +size(12px,90%)    
+.line_percent.p100
+  +size(12px,100%)  
+  border-radius: 10px
+.percent
+  margin: auto 0px 0px 30px  //上auto 左30 (for percent only)
+  position: absolute //靠右(1)
+  right: 0px //靠右(2)
+
+.year,.occupation,.triangle
+  display: inline-block
+  vertical-align: top
+.year,.triangle
+  margin-top: 4px
+.year
+  background-color: gray
+  color: white
+  padding: 0px 0px 3px 10px //右10下3左10
+  line-height: 20px
+  border-radius: 0px 3px 3px 0px
+
+// .year:after <---位置失敗!!!!
+//   content: ""
+//   font-size: 0px
+//   border-color: black pink gray #0000FF
+//   border-style: solid solid solid solid
+//   border-width: 13px
+//   +size(0px,0px)
+  
+.triangle
+  //   background-color: rgba(black,0.5) 
+  //   padding: 0px 10px 3px 10px //右10下3左10
+  //   // border: 5px solid black
+  //   transform: rotate(-45deg) <---沒有反應的轉三角型!!!!(失敗)
+  font-style: 0px
+  border-color: transparent transparent transparent gray //上右下三角型透明
+  border-style: solid solid solid solid
+  border-width: 11px 0px 12px 15px //變成長型的三角形
+  +size(0px,0px) // 中間才會變成尖的
+  left: -5px //靠左去掉空白
+  z-index: -1 //置底
+  border-radius: 2px
+
+  
+
+.occupation
+  padding: 0px 40px
+  margin-right: 40px
+.occupation:before
+  content: "●"
+  position: absolute
+  left: 10px
+.oc_position,.company
+  font-size: 15px  
+  
+.timeline
+  display: inline-block
+  position: absoute
+  border: 2px solid rgba(pink,0.5)
+  border-width: 0px 2px 0px 0px
+  z-index: -1
+  +size(180px,0px)
+  top: -120px
+  left: -74.7%
+.work_experience
+  height: 200px //解決線的問題
+  
+  
+.education,.personal_skill
+  font-size: 0px
+.little_left,.little_right
+  display: inline-block //才可並排
+  font-size: 20px
+  
+.little_left
+  +size(auto,50%)
+  background-color: rgba(pink,0.1)
+  // padding: 20px 30px //上下20 左右30
+  padding-right: 20px
+  
+.little_right
+  +size(100%,50%)
+  background-color: rgba(yellow,0.01)
+  vertical-align: top
+  padding-left: 15px
+  
+
+
+.education
+  line-height: 20px
+  hr
+    margin: 5px 0px 0px 0px
+  span
+    line-height: 5px
+.specialize,.school
+  font-size: 15px
+
+.personal_skill
+  line-height: 20px
+  .little_left,.little_right
+    padding: 0px
+  .little_right
+    padding-left: 15px
+  
+  
+.c.skill
+  width: 85px
+ 
+.line.skill
+  display: inline-block
+  vertical-align: middle
+  border-radius: 10px
+  background-color: rgba(pink,0.8)
+  +size(12px,125px)
+  // right: -5px
